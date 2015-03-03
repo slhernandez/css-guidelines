@@ -5,19 +5,6 @@ List of guidelines for writing good CSS.  This reference will hopefully lead me 
 
 ### CSS Code Smells  
 
-#### Undoing style
-Any CSS that unsets styles.  CSS should be applied to take advantage of cascading.
-CSS properties should inherit and add to previouse ones.
-They should never undo a ruleset.
-
-```css
-  /* Undoing CSS Styles can be bad news */
-  border-bottom: none;
-  padding: 0;
-  float: none;
-  margin-left: 0;
-```
-
 #### Magic Numbers
 Magic numbers are hacks.  They are usually values that are used because it just works.
 Get the layout fixed at all costs.  Forget about whether it's the correct 
@@ -41,6 +28,60 @@ placed again.  The correct solution is to use ```top: 100%;```.
 
 When you encounter a magic number, ask yourself how you can achieve the same result without
 that arbitrary number.
+
+#### Undoing style
+Any CSS that unsets styles.  CSS should be applied to take advantage of cascading.
+CSS properties should inherit and add to previouse ones.
+They should never undo a ruleset.
+
+```css
+  /* Undoing CSS Styles can be bad news */
+  border-bottom: none;
+  padding: 0;
+  float: none;
+  margin-left: 0;
+```
+### Overriding
+
+Overriding styles makes selectors and debugging harder. Avoid it when possible.
+
+```css
+/* bad */
+li {
+  visibility: hidden;
+}
+li:first-child {
+  visibility: visible;
+}
+
+/* good */
+li + li {
+  visibility: hidden;
+}
+```
+
+### Animations
+
+Favor transitions over animations. Avoid animating other properties than
+`opacity` and `transform`.
+
+```css
+/* bad */
+div:hover {
+  animation: move 1s forwards;
+}
+@keyframes move {
+  100% {
+    margin-left: 100px;
+  }
+}
+
+/* good */
+div:hover {
+  transition: 1s;
+  transform: translateX(100px);
+}
+```
 
 #### Qualified selectors
 Tag selectors that are prepended by the an element.
@@ -111,7 +152,6 @@ This is really bad CSS.  Terrible.  All the declarations go to the extreme to fo
 your foo item into submission on the page.  This type of code show a lack of understanding
 in the box-model or layout.  More typically, this code is a result of poorly constructed
 layout that was written at the beginning of the project.
-
 
 #### Broad selectors
 Carpet bombing every div or tag on the page is the definition of broad selectors.
@@ -197,48 +237,6 @@ and avoid `!important`.
 }
 .foo {
   color: red;
-}
-```
-
-### Overriding
-
-Overriding styles makes selectors and debugging harder. Avoid it when possible.
-
-```css
-/* bad */
-li {
-  visibility: hidden;
-}
-li:first-child {
-  visibility: visible;
-}
-
-/* good */
-li + li {
-  visibility: hidden;
-}
-```
-
-### Animations
-
-Favor transitions over animations. Avoid animating other properties than
-`opacity` and `transform`.
-
-```css
-/* bad */
-div:hover {
-  animation: move 1s forwards;
-}
-@keyframes move {
-  100% {
-    margin-left: 100px;
-  }
-}
-
-/* good */
-div:hover {
-  transition: 1s;
-  transform: translateX(100px);
 }
 ```
 
