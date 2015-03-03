@@ -63,7 +63,35 @@ specificity. The browser workload will increase which will decrease performance.
 would you have the browser look for a class called ```.btn``` on an ```a``` when you 
 could just ask it to look for ```.btn``` and be done with it?  Don't qualify selectors.
 
+Here are more extreme cases of overqualified selectors.
+
+```css
+/* bad */
+ul.nav li.active a {}
+div.header a.logo img {}
+.content ul.feature a.button {}
+
+/* good */
+.nav .active a {}
+.logo img {}
+.features-button {}
+```
+Reducing specificity saves code and increases performance and portability.
+
 #### Hard-coded & absolute values
+This concept is similar to magic numbers but a little different in scope.
+
+```css
+h1 {
+  font-size: 24px;
+  line-height: 32px; 
+}
+```
+
+Line height should be set relatively to make them more flexible.  So line-height 
+property of ```line-height: 32px``` should be expressed as ```line-height: 1.333```.  
+Expressing the line-height as a relative number will allow you to change the font-size
+without incident.
 
 #### Brute forcing
 
@@ -95,5 +123,24 @@ and avoid `!important`.
 }
 .foo {
   color: red;
+}
+```
+
+### Overriding
+
+Overriding styles makes selectors and debugging harder. Avoid it when possible.
+
+```css
+/* bad */
+li {
+  visibility: hidden;
+}
+li:first-child {
+  visibility: visible;
+}
+
+/* good */
+li + li {
+  visibility: hidden;
 }
 ```
