@@ -90,16 +90,90 @@ h1 {
 
 Line height should be set relatively to make them more flexible.  So line-height 
 property of ```line-height: 32px``` should be expressed as ```line-height: 1.333```.  
+
 Expressing the line-height as a relative number will allow you to change the font-size
 without incident.
 
 #### Brute forcing
+Brute forcing occurs when you take multiple CSS properties and hard-code magic numbers
+to force a layout to work.
+
+```css
+.foo {
+  margin-left: -3px;
+  position: relative;
+  z-index: 9999;
+  height: 59px;
+  float: left; 
+}
+```
+This is really bad CSS.  Terrible.  All the declarations go to the extreme to force
+your foo item into submission on the page.  This type of code show a lack of understanding
+in the box-model or layout.  More typically, this code is a result of poorly constructed
+layout that was written at the beginning of the project.
+
 
 #### Broad selectors
+Carpet bombing every div or tag on the page is the definition of broad selectors.
+
+```css
+
+/* bad */
+section {
+  background-color: #FFF;
+  padding: 20px;
+}
+
+/* good */
+ul {
+  font-weight: 200;
+  font-size: 1.2em;
+}
+
+section .media {
+  display: table;
+  width: 100%;
+}
+```
+
+Please avoid this type of selector.  Otherwise known as dangerous selector.  If you create
+selectors that are over reaching, you'll have to undo CSS styling.  Undoing CSS styles
+is not cool.  You really don't want your styles to leak to other areas of the layout.  Make
+sure your CSS selectors have good selector intent.
 
 #### !important 
+I have no problem using ```!important```.  It can be a valuble tool at your disposal. 
+It should be used proactively.  I understand there will come a time when you require 
+a style to take precedence over everything that is in context.
+
+```css
+/* bad  use is reactive */
+h1 {
+  font-size: 40px !important
+}
+/* good use is proactive */
+.error-message {
+    color: #dd463e !important;
+}
+```
+
+Error text should be colored red.  To make sure that the red color property takes precedence
+you can use ```!important``` because you know ahead of time that red text should remain constant.
+
+In the case of the header tag, you are forcefully setting the font-size to 40px to override the
+known default set in the base-layout.  Bad CSS probably forced you to use ```!important```.  But 
+it doesn't fix the underlying problem and now you have just made it worse with another layer of 
+super-specificity.
 
 #### IDs
+Use IDs in HTML for fragment identifiers and JavaScript hooks.  Never use it for CSS.
+
+Here are reasons why not to use IDs
+* IDs can never be used more than once in a page
+* Classes can exist only once, or multiple times.
+* IDs can often have their traits abstracted  into reusable classes.
+* An ID is a ton more specific that a class.
+* No amount of chained classes can override an ID.
 
 #### Non-descriptive class names
 
@@ -144,3 +218,27 @@ li + li {
   visibility: hidden;
 }
 ```
+
+### Animations
+
+Favor transitions over animations. Avoid animating other properties than
+`opacity` and `transform`.
+
+```css
+/* bad */
+div:hover {
+  animation: move 1s forwards;
+}
+@keyframes move {
+  100% {
+    margin-left: 100px;
+  }
+}
+
+/* good */
+div:hover {
+  transition: 1s;
+  transform: translateX(100px);
+}
+```
+
