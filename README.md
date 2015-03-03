@@ -211,7 +211,7 @@ known default set in the base-layout.  Bad CSS probably forced you to use ```!im
 it doesn't fix the underlying problem and now you have just made it worse with another layer of 
 super-specificity.
 
-Honest TIP: Don't make values and selectors hard to override. 
+__Honest TIP__: Don't make values and selectors hard to override. 
 
 ```css
 /* really bad */
