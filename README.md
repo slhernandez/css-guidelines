@@ -191,9 +191,15 @@ a style to take precedence over everything that is in context.
 h1 {
   font-size: 40px !important
 }
+
 /* good use is proactive */
 .error-message {
     color: #dd463e !important;
+}
+
+/* Even better use of specificity */
+.text-display.error-message {
+  color: #dd463e;
 }
 ```
 
@@ -204,6 +210,26 @@ In the case of the header tag, you are forcefully setting the font-size to 40px 
 known default set in the base-layout.  Bad CSS probably forced you to use ```!important```.  But 
 it doesn't fix the underlying problem and now you have just made it worse with another layer of 
 super-specificity.
+
+Honest TIP: Don't make values and selectors hard to override. 
+
+```css
+/* really bad */
+.bar {
+  color: green !important;
+}
+.foo {
+  color: red;
+}
+
+/* super good */
+.foo.bar {
+  color: green;
+}
+.foo {
+  color: red;
+}
+```
 
 #### IDs
 Use IDs in HTML for fragment identifiers and JavaScript hooks.  Never use it for CSS.
@@ -217,26 +243,5 @@ Here are reasons why not to use IDs
 
 #### Non-descriptive class names
 
-#### Specificity
 
-Don't make values and selectors hard to override. Minimize the use of `id`'s
-and avoid `!important`.
-
-```css
-/* bad */
-.bar {
-  color: green !important;
-}
-.foo {
-  color: red;
-}
-
-/* good */
-.foo.bar {
-  color: green;
-}
-.foo {
-  color: red;
-}
-```
 
