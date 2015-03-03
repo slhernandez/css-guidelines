@@ -241,6 +241,23 @@ Here are reasons why not to use IDs
 * An ID is a ton more specific that a class.
 * No amount of chained classes can override an ID.
 
+__Need Increased Specificity?__  
+
+Don't use IDs or ```!important```
+Here is a trick...
+
+```css
+/* Chaining selector with itself to increase specificity. */
+.btn.btn {}
+
+/* this selector will override the previous .btn.btn selector */
+.btn.btn.btn.btn {}
+```
+
+Use chained selectors instead of ```!important```.  
+
+Highly recommend the talk [3.14 Things I Didn't Know About CSS](https://speakerdeck.com/mathiasbynens/3-dot-14-things-i-didnt-know-about-css-at-css-day-2014)
+
 #### Non-descriptive class names
 
 
