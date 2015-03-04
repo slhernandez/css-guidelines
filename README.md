@@ -1,5 +1,3 @@
-![CSS Comic](images/css-comic.jpg "Steve's Website")
-
 # css-guidelines
 List of guidelines for writing good CSS.  This reference will hopefully lead to better CSS markup.
 
