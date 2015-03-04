@@ -39,6 +39,24 @@ They should never undo a ruleset.
   float: none;
   margin-left: 0;
 ```
+
+The use of the ```initial``` CSS keyword would be beneficial in this scenario. The 
+value ```initial``` will ignore cascaded styles or inherited values and will "reset"
+to its default initial value.  All CSS properties have initial values.  Feel free 
+to use this keyword with any CSS property. 
+
+```css
+/* override font-style for heading */
+h6 {
+  font-style: italic;
+}
+
+/* Undo the style for the sidebar region */
+.sidebar h6 {
+  font-style: initial;
+}
+``` 
+
 ### Overriding
 
 Overriding styles makes selectors and debugging harder. Avoid it when possible.
