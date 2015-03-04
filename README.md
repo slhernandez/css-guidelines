@@ -1,7 +1,7 @@
 # css-guidelines
 List of guidelines for writing good CSS.  This reference will hopefully lead to better CSS markup.
 
-### CSS Code Smells  
+### CSS Do's and Don'ts  
 
 #### Magic Numbers
 Magic numbers are hacks.  They are usually values that are used because it just works.
