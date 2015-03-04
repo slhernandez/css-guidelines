@@ -57,7 +57,7 @@ h6 {
 }
 ``` 
 
-### Overriding
+#### Overriding
 
 Overriding styles makes selectors and debugging harder. Avoid it when possible.
 
@@ -76,7 +76,7 @@ li + li {
 }
 ```
 
-### Animations
+#### Animations
 
 Favor transitions over animations. Avoid animating other properties than
 `opacity` and `transform`.
@@ -275,6 +275,45 @@ Use chained selectors instead of ```!important```.
 Highly recommend the talk [3.14 Things I Didn't Know About CSS](https://speakerdeck.com/mathiasbynens/3-dot-14-things-i-didnt-know-about-css-at-css-day-2014)
 
 #### Non-descriptive class names
+
+This is my opinion and a developer decision.  I believe in using descriptive class names
+that can properly describe the div container or element.  I will not attempt to blanket parent
+containers with tag selectors because you'll always have multiple tags on the same page.  
+There will always be more than one ```ul``` tag.  Might as well provide a descriptive class name
+for code readability and maintainability.
+
+```css
+/* bad */
+.card {
+  padding: 10px;
+  margin: 5px;
+  text-align: center; 
+}
+
+/* good */
+.profile-card {
+  padding: 10px;
+  margin: 5px;
+  text-align: center; 
+}
+
+.credit-card {
+  padding: 5px;
+  text-align: right; 
+}
+
+/* bad */
+ul > li {
+  
+}
+
+/* good */
+/* ul -> .bookmarks */
+/* li -> .bookmark-item */
+.bookmarks .bookmark-item {
+  
+}
+```
 
 
 
