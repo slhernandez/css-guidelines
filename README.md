@@ -99,7 +99,7 @@ div:hover {
 }
 ```
 
-#### Qualified selectors
+#### Over qualified selectors
 Tag selectors that are prepended by the an element.
 
 ```css
@@ -135,7 +135,7 @@ div.header a.logo img {}
 ```
 Reducing specificity saves code and increases performance and portability.
 
-#### Hard-coded & absolute values
+#### Hard-coded CSS values 
 This concept is similar to magic numbers but a little different in scope.
 
 ```css
@@ -151,8 +151,8 @@ property of ```line-height: 32px``` should be expressed as ```line-height: 1.333
 Expressing the line-height as a relative number will allow you to change the font-size
 without incident.
 
-#### Brute forcing
-Brute forcing occurs when you take multiple CSS properties and hard-code magic numbers
+#### Forced CSS 
+Forced CSS occurs when you take multiple CSS properties and hard-code magic numbers
 to force a layout to work.
 
 ```css
@@ -164,7 +164,7 @@ to force a layout to work.
   float: left; 
 }
 ```
-This is really bad CSS.  Terrible.  All the declarations go to the extreme to force
+This is really bad CSS.  All the declarations go to the extreme to force
 your foo item into submission on the page.  This type of code show a lack of understanding
 in the box-model or layout.  More typically, this code is a result of poorly constructed
 layout that was written at the beginning of the project.
@@ -247,7 +247,7 @@ __Honest TIP__: Don't make values and selectors hard to override.
 }
 ```
 
-#### IDs
+####  On the use of IDs
 Use IDs in HTML for fragment identifiers and JavaScript hooks.  Never use it for CSS.
 
 Here are reasons why not to use IDs
@@ -276,11 +276,11 @@ Highly recommend the talk [3.14 Things I Didn't Know About CSS](https://speakerd
 
 #### Non-descriptive class names
 
-This is my opinion and a developer decision.  I believe in using descriptive class names
-that can properly describe the div container or element.  I will not attempt to blanket parent
-containers with tag selectors because you'll always have multiple tags on the same page.  
-There will always be more than one ```ul``` tag.  Might as well provide a descriptive class name
-for code readability and maintainability.
+I believe in using descriptive class names that can properly describe the function of the 
+item that will be styled.  I will not attempt to blanket parent containers with tag selectors
+because you'll always have multiple tags on the same page. There will always be more than 
+one ```ul``` tag.  Might as well provide a descriptive class name for code readability 
+and maintainability.
 
 ```css
 /* bad */
@@ -303,16 +303,12 @@ for code readability and maintainability.
 }
 
 /* bad */
-ul > li {
-  
-}
+ul > li {}
 
 /* good */
 /* ul -> .bookmarks */
 /* li -> .bookmark-item */
-.bookmarks .bookmark-item {
-  
-}
+.bookmarks .bookmark-item {}
 ```
 
 
