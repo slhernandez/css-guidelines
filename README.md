@@ -97,7 +97,8 @@ li + li {
 
 #### Animations
 
-Favor transitions over animations. Avoid animating other properties than
+Favor transitions over animations for hover states, or when information
+ on a page is added or removed. It's best to avoid animating other properties than
 `opacity` and `transform`.
 
 ```css
@@ -116,6 +117,10 @@ div:hover {
   transition: 1s;
   transform: translateX(100px);
 }
+
+A ```transition``` occurs when an element changes from one state to another, and 
+the browser fills in that state change with a sequence of in-between frames.
+There is always a beginning and an end state.
 ```
 
 #### Over qualified selectors
