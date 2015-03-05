@@ -1,6 +1,29 @@
 # css-guidelines
 List of guidelines for writing good CSS.  This reference will hopefully lead to better CSS markup.
 
+##Writing Good CSS is hard
+
+Why? CSS is global, and every rule you write has the potential to affect entirely
+unreleated parts of the site.  The unpredictability makes writing scalable CSS a
+difficult task.  Architectural problems can cripple development.  Or it can facilitate 
+developers to produce bad CSS.  Understanding the nuances of predictable and maintable 
+CSS should be a top priority.
+
+The main goal to creating maintainable CSS is to avoid side effects.  A side effect 
+can occur when modifying a style property appears to only affect things in a very
+limited scope, then in reality affects a much broader range of things, and does so
+in a way that may not be obvious to the person performing the action.
+
+Since CSS rules live in the global scope, side effects are extremely common. Your 
+average stylesheet usually consists of an extremely fragile collection of coupled 
+rules, dependent on the presence, order, and specificity of other rules, making 
+unassuming changes to have unforeseen consequences.
+
+##Why CSS Frameworks can be dangerous
+CSS frameworks litter the global namespace with base styles, they choose class names
+so common they're almost guaranteed to conflict with your existing code, and they make
+no effort to encapsulate their components.
+
 ### CSS Do's and Don'ts  
 
 #### Magic Numbers
@@ -347,6 +370,7 @@ ul > li {}
 /* li -> .bookmark-item */
 .bookmarks .bookmark-item {}
 ```
+
 
 
 
