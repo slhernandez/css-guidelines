@@ -168,9 +168,16 @@ Reducing specificity saves code and increases performance and portability.
 This concept is similar to magic numbers but a little different in scope.
 
 ```css
+/* bad */
 h1 {
   font-size: 24px;
   line-height: 32px; 
+}
+
+/* good */
+h1 {
+  font-size: 1.4em;
+  line-height: 1.33;
 }
 ```
 
@@ -185,6 +192,7 @@ Forced CSS occurs when you take multiple CSS properties and hard-code magic numb
 to force a layout to work.
 
 ```css
+/* bad */
 .foo {
   margin-left: -3px;
   position: relative;
@@ -194,8 +202,8 @@ to force a layout to work.
 }
 ```
 This is really bad CSS.  All the declarations go to the extreme to force
-your foo item into submission on the page.  This type of code show a lack of understanding
-in the box-model or layout.  More typically, this code is a result of poorly constructed
+your foo item into submission on the page.  This type of code shows a lack of understanding
+in the box-model or layout.  More specifically, this code is a result of poorly constructed
 layout that was written at the beginning of the project.
 
 #### Broad selectors
