@@ -9,9 +9,17 @@ Get the layout fixed at all costs.  Forget about whether it's the correct
 solution and go with the hack.
 
 ```css
+/* bad */
 .site-nav > li:hover .dropdown {
   position: absolute;
   top: 19px;
+  left: 0;
+}
+
+/* good */
+.site-nav > li:hover .dropdown {
+  position: absolute;
+  top: 100%;
   left: 0;
 }
 ```
@@ -21,16 +29,17 @@ is due to the height of the list item.  The ```<li>``` height is ```19px``` and 
 dialog needs to be flushed at the bottom.  The problem with using a hard coded value
 like ```19px``` is that anyone can change the font-size of the list item and all of the 
 sudden the height is no longer ```19px``` but ```21px```.  The developer that made that one
-property change now needs to go digging for solution to get the dialog properly
-placed again.  The correct solution is to use ```top: 100%;```.
+property change now needs to go digging for a solution to get the dialog properly
+placed again. They may not be aware that a hard-coded number exists to align the dialoge.
+ The correct solution is to use ```top: 100%;```.
 
-When you encounter a magic number, ask yourself how you can achieve the same result without
-that arbitrary number.
+When you encounter a magic number, ask yourself if you can achieve the same result without
+that  arbitrary number.
 
 #### Undoing style
-Any CSS that unsets styles.  CSS should be applied to take advantage of cascading.
-CSS properties should inherit and add to previouse ones.
-They should never undo a ruleset.
+Any CSS that unsets styles is considered sloppy. Propery values should be applied to take 
+advantage of cascading. CSS values should be set to initial or inherit if you want to unset a
+certain style. They should never undo a ruleset.
 
 ```css
   /* Undoing CSS Styles can be bad news */
