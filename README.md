@@ -37,16 +37,26 @@ When you encounter a magic number, ask yourself if you can achieve the same resu
 that  arbitrary number.
 
 #### Undoing style
-Any CSS that unsets styles is considered sloppy. Propery values should be applied to take 
+Any CSS that unsets styles is considered sloppy. Property values should be applied to take 
 advantage of cascading. CSS values should be set to initial or inherit if you want to unset a
 certain style. They should never undo a ruleset.
 
 ```css
-  /* Undoing CSS Styles can be bad news */
+/* bad */
+.side-bar .mobile {
   border-bottom: none;
   padding: 0;
   float: none;
   margin-left: 0;
+}
+
+/* good */
+.side-bar .mobile {
+  border-bottom: initial;
+  padding: 0;
+  float: inital;
+  margin-left: 0;
+}
 ```
 
 The use of the ```initial``` CSS keyword would be beneficial in this scenario. The 
