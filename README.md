@@ -117,6 +117,7 @@ div:hover {
   transition: 1s;
   transform: translateX(100px);
 }
+```
 
 A ```transition``` occurs when an element changes from one state to another, and 
 the browser fills in that state change with a sequence of in-between frames.
@@ -126,7 +127,6 @@ An ```animation``` is a more powerful alternative to transitions.  Rather than r
 on a change from one beginning state to an end state, animations can be made up of 
 as many in-between states as you like and offer more control over how the states 
 are animated.
-```
 
 #### Over qualified selectors
 Tag selectors that are prepended by the an element.
