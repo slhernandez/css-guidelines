@@ -19,7 +19,7 @@ average stylesheet usually consists of an extremely fragile collection of couple
 rules, dependent on the presence, order, and specificity of other rules, making 
 unassuming changes to have unforeseen consequences.
 
-##Why CSS Frameworks can be dangerous
+### Why CSS Frameworks can be dangerous
 CSS frameworks litter the global namespace with base styles, they choose class names
 so common they're almost guaranteed to conflict with your existing code, and they make
 no effort to encapsulate their components.
