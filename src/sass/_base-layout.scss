@@ -115,25 +115,94 @@ img {
 .workarea-magicnumbers.show {
   position: initial;
   opacity: 1.0;
-  transition: all 350ms linear;
 }
 
+/* Basic Layout Styles */
 .workarea-basics {
   text-align: center;
   .box-1, 
   .box-2,
-  .box-3 {
+  .box-3,
+  .box-4 {
     width: 100px;
     height: 100px;
+    transition: all 0.5s ease-in-out;
+    &.static {
+      position: static;
+    }
+    &.relative {
+      position: relative;
+    }
+    &.absolute {
+      position: absolute;
+    }
   }
   .box-1 {
     background-color: #ee3e64;
+    &.absolute {
+      top: 0;
+      left: 0;
+    }
+    &.fixed {
+      transition: 4s;
+      opacity: 0.0;
+    }
   }
   .box-2 {
     background-color: #44accf;
+    &.relative {
+      left: 200px;
+      transition: .8s;
+      transform: translateX(100%);
+    }
+    &.absolute {
+      top: 0;
+      right: 0;
+    }
+    &.fixed {
+      transition: 4s;
+      opacity: 0.0;
+    }
   }
   .box-3 {
     background-color: #b7d84b;
+    &.absolute {
+      bottom: 0;
+      left: 0;
+    }
+    &.fixed {
+      transition: 4s;
+      opacity: 0.0;
+    }
+  }
+  .box-4 {
+    background-color: #7D669E;
+    &.absolute {
+      bottom: 0;
+      right: 0;
+    }
+    &.fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+    }
+  }
+}
+
+.basic-controls {
+  border-radius: 0 0 4px 4px;
+  padding: 2em 0;
+  background: rgba(0,0,0,0.2);
+  position: absolute;
+  width: 100%;
+  bottom: 0; 
+  a {
+    color: #454545;
+    text-decoration: underline;
+    font-size: $font-size-14;
+    margin-left: 1em;
   }
 }
 

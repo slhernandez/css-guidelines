@@ -2,6 +2,7 @@ var demo = {
   init: function() {
     console.log('demo is initialized.'); 
     this.setupDemoClickEvents();
+    this.bindBasicLayout();
   },
   setupDemoClickEvents: function() {
     var demoNav = document.querySelector('.demo-menu');
@@ -31,6 +32,35 @@ var demo = {
   clearNavSelection: function(nav) {
     Array.prototype.map.call(nav.children, function(item) {
       item.classList.remove('select');
+    });
+  },
+  bindBasicLayout: function() {
+    console.log("bindBasicLayout");
+    var basicControls = document.querySelector('.basic-controls');
+    var workareaBasics = document.querySelector('.workarea-basics');
+    basicControls.addEventListener('click', function(e) {
+      var control = e.target.textContent;
+      demo.removeModifierClass(workareaBasics);
+      if (control === 'Static') {
+        demo.mapClass(workareaBasics, control.toLowerCase());
+      } else if (control === 'Relative') {
+        demo.mapClass(workareaBasics, control.toLowerCase());
+      } else if (control === 'Absolute') {
+        demo.mapClass(workareaBasics, control.toLowerCase());
+      } else if (control === 'Fixed') {
+        demo.mapClass(workareaBasics, control.toLowerCase());
+      }
+    }.bind(demo));
+  },
+  mapClass: function(obj, classname) {
+    Array.prototype.map.call(obj.children, function(item) {
+      item.classList.add(classname);
+    });
+  },
+  removeModifierClass: function(obj) {
+    Array.prototype.map.call(obj.children, function(item) {
+      var itemToRemove = item.classList[1];
+      item.classList.remove(itemToRemove);
     });
   }
 }

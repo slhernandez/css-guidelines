@@ -231,19 +231,78 @@ img {
 
 .workarea-basics.show, .workarea-scaling.show, .workarea-magicnumbers.show {
   position: initial;
-  opacity: 1.0;
-  -webkit-transition: all 350ms linear;
-          transition: all 350ms linear; }
+  opacity: 1.0; }
 
+/* Basic Layout Styles */
 .workarea-basics {
   text-align: center; }
-  .workarea-basics .box-1, .workarea-basics .box-2, .workarea-basics .box-3 {
+  .workarea-basics .box-1, .workarea-basics .box-2, .workarea-basics .box-3, .workarea-basics .box-4 {
     width: 100px;
-    height: 100px; }
+    height: 100px;
+    -webkit-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out; }
+    .workarea-basics .box-1.static, .workarea-basics .box-2.static, .workarea-basics .box-3.static, .workarea-basics .box-4.static {
+      position: static; }
+    .workarea-basics .box-1.relative, .workarea-basics .box-2.relative, .workarea-basics .box-3.relative, .workarea-basics .box-4.relative {
+      position: relative; }
+    .workarea-basics .box-1.absolute, .workarea-basics .box-2.absolute, .workarea-basics .box-3.absolute, .workarea-basics .box-4.absolute {
+      position: absolute; }
   .workarea-basics .box-1 {
     background-color: #ee3e64; }
+    .workarea-basics .box-1.absolute {
+      top: 0;
+      left: 0; }
+    .workarea-basics .box-1.fixed {
+      -webkit-transition: 4s;
+              transition: 4s;
+      opacity: 0.0; }
   .workarea-basics .box-2 {
     background-color: #44accf; }
+    .workarea-basics .box-2.relative {
+      left: 200px;
+      -webkit-transition: .8s;
+              transition: .8s;
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
+    .workarea-basics .box-2.absolute {
+      top: 0;
+      right: 0; }
+    .workarea-basics .box-2.fixed {
+      -webkit-transition: 4s;
+              transition: 4s;
+      opacity: 0.0; }
   .workarea-basics .box-3 {
     background-color: #b7d84b; }
+    .workarea-basics .box-3.absolute {
+      bottom: 0;
+      left: 0; }
+    .workarea-basics .box-3.fixed {
+      -webkit-transition: 4s;
+              transition: 4s;
+      opacity: 0.0; }
+  .workarea-basics .box-4 {
+    background-color: #7D669E; }
+    .workarea-basics .box-4.absolute {
+      bottom: 0;
+      right: 0; }
+    .workarea-basics .box-4.fixed {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 100%; }
+
+.basic-controls {
+  border-radius: 0 0 4px 4px;
+  padding: 2em 0;
+  background: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
+  .basic-controls a {
+    color: #454545;
+    text-decoration: underline;
+    font-size: 0.875em;
+    margin-left: 1em; }
 
