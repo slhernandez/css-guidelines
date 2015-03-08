@@ -171,8 +171,7 @@ img {
   height: 730px; }
 
 .container {
-  margin: 25px auto 0 auto;
-  width: 980px; }
+  width: 100%; }
   .container:before, .container:after {
     content: "\0020";
     display: block;
@@ -184,12 +183,13 @@ img {
 .demo-menu {
   list-style: none;
   display: table;
-  margin: 0 auto;
+  margin: 5em auto;
   width: 75%; }
   .demo-menu li {
-    border-color: #CCC;
-    border-style: solid;
-    border-width: 1px 1px 1px 0;
+    background-image: -webkit-linear-gradient(#FFF, #F2F3F4);
+    background-image: linear-gradient(#FFF, #F2F3F4);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    color: #444;
     cursor: pointer;
     display: inline-block;
     display: table-cell;
@@ -202,10 +202,14 @@ img {
     .demo-menu li:hover {
       background: #FFF; }
     .demo-menu li:first-child {
-      border-width: 1px; }
+      border-radius: 4px 0 0 4px; }
+    .demo-menu li:last-child {
+      border-radius: 0 4px 4px 0; }
     .demo-menu li:active {
       position: relative;
       top: 1px; }
+    .demo-menu li.select {
+      background: #FFF; }
 
 .workarea {
   background: #FFF;

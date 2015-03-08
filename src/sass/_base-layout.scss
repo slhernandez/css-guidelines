@@ -44,20 +44,23 @@ img {
 }
 
 .container {
-  margin: 25px auto 0 auto;
-  width: 980px;
+  //width: 980px;
+  width: 100%;
   @include clear();
 }
 
 .demo-menu {
   list-style: none;
   display: table;
-  margin: 0 auto;
+  margin: 5em auto;
   width: 75%;
   li {
-    border-color: #CCC;
-    border-style: solid;
-    border-width: 1px 1px 1px 0;
+    background-image: linear-gradient(#FFF, #F2F3F4);
+    //border-color: #DDD;
+   // border-style: solid;
+    //border-width: 1px 1px 1px 0;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    color: #444;
     cursor: pointer;
     display: inline-block;
     display: table-cell;
@@ -70,11 +73,18 @@ img {
       background: #FFF;
     }
     &:first-child {
-      border-width: 1px;
+      border-radius: 4px 0 0 4px;
+      //border-width: 1px;
+    }
+    &:last-child {
+      border-radius: 0 4px 4px 0; 
     }
     &:active {
       position: relative;
       top: 1px;
+    }
+    &.select {
+      background: #FFF;
     }
   }
 }
