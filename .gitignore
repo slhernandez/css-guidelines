@@ -1,0 +1,10 @@
+node_modules/
+#build/
+
+#sass-cache
+*.scssc
+.sass-cache/
+.sass-cache/*
+
+npm-debug.log
+*.DS_Store

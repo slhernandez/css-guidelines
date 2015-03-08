@@ -19,14 +19,14 @@ average stylesheet usually consists of an extremely fragile collection of couple
 rules, dependent on the presence, order, and specificity of other rules, making 
 unassuming changes to have unforeseen consequences.
 
-### Why CSS Frameworks can be dangerous
+## Why CSS Frameworks can be dangerous
 CSS frameworks litter the global namespace with base styles, they choose class names
 so common they're almost guaranteed to conflict with your existing code, and they make
 no effort to encapsulate their components.
 
-### CSS Do's and Don'ts  
+## CSS Code Smells  
 
-#### Magic Numbers
+## Magic Numbers
 Magic numbers are hacks.  They are usually values that are used because it just works.
 Get the layout fixed at all costs.  Forget about whether it's the correct 
 solution and go with the hack.
@@ -59,7 +59,7 @@ placed again. They may not be aware that a hard-coded number exists to align the
 When you encounter a magic number, ask yourself if you can achieve the same result without
 that  arbitrary number.
 
-#### Undoing style
+## Undoing style
 Any CSS that unsets styles is considered sloppy. Property values should be applied to take 
 advantage of cascading. CSS values should be set to initial or inherit if you want to unset a
 certain style. They should never undo a ruleset.
@@ -99,7 +99,7 @@ h6 {
 }
 ``` 
 
-#### Overriding
+## Overriding
 
 Overriding styles makes selectors and debugging harder. Avoid it when possible.
 
@@ -118,7 +118,7 @@ li + li {
 }
 ```
 
-#### Animations
+## Animations
 
 Favor transitions over animations for hover states, or when information
  on a page is added or removed. It's best to avoid animating other properties than
@@ -151,7 +151,7 @@ on a change from one beginning state to an end state, animations can be made up 
 as many in-between states as you like and offer more control over how the states 
 are animated.
 
-#### Over qualified selectors
+## Over qualified selectors
 Tag selectors that are prepended by the an element.
 
 ```css
@@ -187,7 +187,7 @@ div.header a.logo img {}
 ```
 Reducing specificity saves code and increases performance and portability.
 
-#### Hard-coded CSS values 
+## Hard-coded CSS values 
 This concept is similar to magic numbers but a little different in scope.
 
 ```css
@@ -210,7 +210,7 @@ property of ```line-height: 32px``` should be expressed as ```line-height: 1.333
 Expressing the line-height as a relative number will allow you to change the font-size
 without incident.
 
-#### Forced CSS 
+## Forced CSS 
 Forced CSS occurs when you take multiple CSS properties and hard-code magic numbers
 to force a layout to work.
 
@@ -229,7 +229,7 @@ your foo item into submission on the page.  This type of code shows a lack of un
 in the box-model or layout.  More specifically, this code is a result of poorly constructed
 layout that was written at the beginning of the project.
 
-#### Broad selectors
+## Broad selectors
 Carpet bombing every div or tag on the page is the definition of broad selectors.
 
 ```css
@@ -257,7 +257,7 @@ selectors that are over reaching, you'll have to undo CSS styling.  Undoing CSS 
 is not cool.  You really don't want your styles to leak to other areas of the layout.  Make
 sure your CSS selectors have good selector intent.
 
-#### !important 
+## !important 
 I have no problem using ```!important```.  It can be a valuble tool at your disposal. 
 It should be used proactively.  I understand there will come a time when you require 
 a style to take precedence over everything that is in context.
@@ -307,7 +307,7 @@ __Honest TIP__: Don't make values and selectors hard to override.
 }
 ```
 
-####  On the use of IDs
+##  On the use of IDs
 Use IDs in HTML for fragment identifiers and JavaScript hooks.  Never use it for CSS.
 
 Here are reasons why not to use IDs
@@ -334,7 +334,7 @@ Use chained selectors instead of ```!important```.
 
 Highly recommend the talk [3.14 Things I Didn't Know About CSS](https://speakerdeck.com/mathiasbynens/3-dot-14-things-i-didnt-know-about-css-at-css-day-2014)
 
-#### Non-descriptive class names
+## Non-descriptive class names
 
 I believe in using descriptive class names that can properly describe the function of the 
 item that will be styled.  I will not attempt to blanket parent containers with tag selectors

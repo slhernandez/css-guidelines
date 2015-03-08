@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #F1F2F3;
+  color: #454545;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: #444;
+  background: rgba(0,0,0,0.6);
+  padding: 16px;
+  h1 {
+    color: #FFF;
+    font-size: $font-size-20;
+    font-weight: 200;
+    margin: 0 auto;
+    text-align: center;
+    width: 980px;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 980px;
+  height: 730px;
+}
+
+.container {
+  margin: 25px auto 0 auto;
+  width: 980px;
+  @include clear();
+}
+
+.demo-menu {
+  list-style: none;
+  display: table;
+  margin: 0 auto;
+  width: 75%;
+  li {
+    border-color: #CCC;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    cursor: pointer;
+    display: inline-block;
+    display: table-cell;
+    text-align: center;
+    width: 25%;
+    height: 2em;
+    vertical-align: middle;
+    transition: all 350ms linear; 
+    &:hover {
+      background: #FFF;
+    }
+    &:first-child {
+      border-width: 1px;
+    }
+    &:active {
+      position: relative;
+      top: 1px;
+    }
+  }
+}
+
+.workarea {
+  background: #FFF;
+  border: 1px solid #CCC;
+  box-shadow: 0 0 3px 0 rgba(0,0,0,0.15);
+  border-radius: 5px;
+  height: 500px;
+  margin: 25px auto 0 auto;
+  width: 75%;
+  position: relative;
+}
+
+.workarea-basics,
+.workarea-scaling,
+.workarea-magicnumbers {
+  position: absolute;
+  left: 999px;
+  top: 0;
+  opacity: 0;
+  transition: all 350ms linear;
+}
+
+.workarea-basics.show,
+.workarea-scaling.show,
+.workarea-magicnumbers.show {
+  position: initial;
+  opacity: 1.0;
+  transition: all 350ms linear;
+}
+
+.workarea-basics {
+  text-align: center;
+  .box-1, 
+  .box-2,
+  .box-3 {
+    width: 100px;
+    height: 100px;
+  }
+  .box-1 {
+    background-color: #ee3e64;
+  }
+  .box-2 {
+    background-color: #44accf;
+  }
+  .box-3 {
+    background-color: #b7d84b;
+  }
+}
+
+.workarea-scaling {
+
+}
+
+.workarea-magicnumbers {
+
+}

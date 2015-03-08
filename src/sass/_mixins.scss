@@ -1,0 +1,31 @@
+// Float clearing clearfix mixin
+@mixin clear() {
+  &:before, &:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Media query breakpoints
+@mixin breakpoint($point) {
+  @if $point == mobilelandscape {
+    @media only screen and (min-width: 500px) { @content; }
+  }
+  @else if $point == tabletportrait {
+    @media only screen and (min-width: 768px) { @content; }
+  }
+  @else if $point == tabletmid {
+    @media only screen and (min-width: 800px) { @content; }
+  }
+  @else if $point == tabletlandscape {
+    @media only screen and (min-width: 1024px) { @content; }
+  }
+  @else if $point == desktop {
+    @media only screen and (min-width: 1200px) { @content; }
+  }
+}
