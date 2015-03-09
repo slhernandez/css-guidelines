@@ -371,6 +371,47 @@ ul > li {}
 .bookmarks .bookmark-item {}
 ```
 
+# CSS Code Smells DEMO
+
+If you've never used Node or npm before, you'll need to install Node.
+If you use homebrew, do:
+
+```
+brew install node
+```
+Otherwise, you can download and install from [here](http://nodejs.org/download/).
+
+### Install Gulp Globally
+
+Gulp must be installed globally in order to use the command line tools. *You may need to use `sudo`*
+
+```
+npm install -g gulp
+```
+
+# Building the project
+
+###Install npm dependencies:
+This runs through all dependencies listed in `package.json` and downloads them
+to a `node_modules` folder in your project directory.
+```
+npm install
+```
+
+###Build project
+This will run gulp.  Gulp will generate the project and store it in the build folder.
+```
+npm start
+```
+
+Alternatively, you can run...
+```
+gulp build
+```
+
+## DEMO is located in BUILD folder
+Go to the build folder and open ```index.html``` from your favorite browser.
+
 
 
 
