@@ -92,7 +92,9 @@ var demo = {
   removeScalingModifiers: function(obj) {
     Array.prototype.map.call(obj.children, function(item) {
       var button = item.querySelector('button');
-      button.className = "";
+      if (button !== null) {
+        button.className = "";
+      }
     });
   },
   mapClassToButton: function(obj, classname) {
