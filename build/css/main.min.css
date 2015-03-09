@@ -330,7 +330,7 @@ img {
     .workarea-scaling .btn-card.non-flexible {
       margin-left: 2.5em; }
 
-.flexible .btn {
+.flexible button {
   font-size: 125%;
   /* Assumming a 16px root font size */
   line-height: 1.5;
@@ -342,9 +342,19 @@ img {
   border-radius: .2em;
   box-shadow: 0 .05em .25em gray;
   color: white;
-  text-shadow: 0 -.05em .05em #335166; }
+  text-shadow: 0 -.05em .05em #335166;
+  -webkit-transition: all .5s linear;
+          transition: all .5s linear; }
+  .flexible button.small {
+    font-size: 80%; }
+  .flexible button.medium {
+    font-size: 125%; }
+  .flexible button.large {
+    font-size: 175%; }
+  .flexible button.huge {
+    font-size: 275%; }
 
-.non-flexible .btn {
+.non-flexible button {
   padding: 6px 16px;
   border: 1px solid #446d88;
   background: -webkit-linear-gradient(#77a0bb, #58a);
@@ -354,7 +364,17 @@ img {
   color: white;
   text-shadow: 0 -1px 1px #335166;
   font-size: 20px;
-  line-height: 30px; }
+  line-height: 30px;
+  -webkit-transition: all .5s linear;
+          transition: all .5s linear; }
+  .non-flexible button.small {
+    font-size: 80%; }
+  .non-flexible button.medium {
+    font-size: 125%; }
+  .non-flexible button.large {
+    font-size: 175%; }
+  .non-flexible button.huge {
+    font-size: 275%; }
 
 .workarea-magictext {
   margin: 2em auto;
@@ -393,7 +413,7 @@ img {
       width: 80%;
       margin: 0 auto; }
     .workarea-magictext p.color {
-      color: rgba(0, 0, 0, 0.8); }
+      color: rgba(0, 0, 0, 0.6); }
     .workarea-magictext p.linespacing {
       line-height: 1.6; }
     .workarea-magictext p.fontsmoothing {

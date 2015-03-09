@@ -241,7 +241,7 @@ img {
 }
 
 .flexible {
-  .btn {
+  button {
     font-size: 125%; /* Assumming a 16px root font size */
     line-height: 1.5; /* or 150% */
     padding: .3em .8em;
@@ -251,11 +251,24 @@ img {
     box-shadow: 0 .05em .25em gray;
     color: white;
     text-shadow: 0 -.05em .05em #335166;
+    transition: all .5s linear;
+    &.small {
+      font-size: 80%;
+    }
+    &.medium {
+      font-size: 125%;
+    }
+    &.large {
+      font-size: 175%;
+    }
+    &.huge {
+      font-size: 275%;
+    }
   }
 }
 
 .non-flexible {
-  .btn {
+  button {
     padding: 6px 16px;
     border: 1px solid #446d88;
     background: linear-gradient(#77a0bb, #58a);
@@ -265,6 +278,19 @@ img {
     text-shadow: 0 -1px 1px #335166;
     font-size: 20px;
     line-height: 30px;
+    transition: all .5s linear;
+    &.small {
+      font-size: 80%;
+    }
+    &.medium {
+      font-size: 125%;
+    }
+    &.large {
+      font-size: 175%;
+    }
+    &.huge {
+      font-size: 275%;
+    }
   }
 }
 
@@ -312,7 +338,7 @@ img {
       margin: 0 auto;
     }
     &.color {
-      color: rgba(0,0,0,0.8);
+      color: rgba(0,0,0,0.6);
     }
     &.linespacing {
       line-height: 1.6;

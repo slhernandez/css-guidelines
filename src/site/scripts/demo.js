@@ -4,6 +4,7 @@ var demo = {
     this.setupDemoClickEvents();
     this.bindBasicLayout();
     this.bindMagicText();
+    this.bindScaleExample();
   },
   setupDemoClickEvents: function() {
     var demoNav = document.querySelector('.demo-menu');
@@ -53,9 +54,21 @@ var demo = {
       if (control === 'reset') {
         demo.removeAllModifierClasses(workareaMagicText);
       } else {
-        demo.mapClass(workareaMagicText, control.toLowerCase());
+        demo.mapClass(workareaMagicText, control);
       }
     }.bind(demo));
+  },
+  bindScaleExample: function() {
+    var scalingControls = document.querySelector('.scaling-controls');
+    var workareaScaling = document.querySelector('.workarea-scaling');
+    scalingControls.addEventListener('click', function(e) {
+      var control = e.target.textContent.toLowerCase();
+      if (control === 'reset') {
+        demo.removeScalingModifiers(workareaScaling);
+      } else {
+        demo.mapClassToButton(workareaScaling, control);
+      }
+    }.bind(demo)); 
   },
   mapClass: function(obj, classname) {
     Array.prototype.map.call(obj.children, function(item) {
@@ -75,7 +88,18 @@ var demo = {
         item.className = "";
       }
     });
-
+  },
+  removeScalingModifiers: function(obj) {
+    Array.prototype.map.call(obj.children, function(item) {
+      var button = item.querySelector('button');
+      button.className = "";
+    });
+  },
+  mapClassToButton: function(obj, classname) {
+    Array.prototype.map.call(obj.children, function(item) {
+      var button = item.querySelector('button');
+      button.classList.toggle(classname);
+    });
   }
 }
 
