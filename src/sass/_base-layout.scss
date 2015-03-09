@@ -45,7 +45,8 @@ img {
 
 .container {
   //width: 980px;
-  width: 100%;
+  width: 60%;
+  margin: 0 auto;
   @include clear();
 }
 
@@ -53,7 +54,7 @@ img {
   list-style: none;
   display: table;
   margin: 5em auto;
-  width: 75%;
+  width: 100%;
   li {
     background-image: linear-gradient(#FFF, #F2F3F4);
     //border-color: #DDD;
@@ -97,7 +98,7 @@ img {
   height: 500px;
   margin: 25px auto 0 auto;
   overflow: hidden;
-  width: 75%;
+  width: 100%;
   position: relative;
 }
 
@@ -193,7 +194,8 @@ img {
 }
 
 .basic-controls,
-.text-controls {
+.text-controls,
+.scaling-controls {
   border-radius: 0 0 4px 4px;
   padding: 2em 0;
   background: rgba(0,0,0,0.2);
@@ -217,7 +219,13 @@ img {
 }
 
 .workarea-scaling {
-
+  text-align: center;
+  height: 418px;
+  padding: 209px 0;
+  button {
+    background: initial;
+    border: initial;
+  }
 }
 
 .workarea-magictext {

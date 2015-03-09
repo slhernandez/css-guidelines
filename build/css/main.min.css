@@ -171,7 +171,8 @@ img {
   height: 730px; }
 
 .container {
-  width: 100%; }
+  width: 60%;
+  margin: 0 auto; }
   .container:before, .container:after {
     content: "\0020";
     display: block;
@@ -184,7 +185,7 @@ img {
   list-style: none;
   display: table;
   margin: 5em auto;
-  width: 75%; }
+  width: 100%; }
   .demo-menu li {
     background-image: -webkit-linear-gradient(#FFF, #F2F3F4);
     background-image: linear-gradient(#FFF, #F2F3F4);
@@ -219,7 +220,7 @@ img {
   height: 500px;
   margin: 25px auto 0 auto;
   overflow: hidden;
-  width: 75%;
+  width: 100%;
   position: relative; }
 
 .workarea-basics, .workarea-scaling, .workarea-magictext {
@@ -294,7 +295,7 @@ img {
       right: 0;
       width: 100%; }
 
-.basic-controls, .text-controls {
+.basic-controls, .text-controls, .scaling-controls {
   border-radius: 0 0 4px 4px;
   padding: 2em 0;
   background: rgba(0, 0, 0, 0.2);
@@ -303,7 +304,7 @@ img {
   bottom: 0;
   left: 0;
   text-align: center; }
-  .basic-controls a, .text-controls a {
+  .basic-controls a, .text-controls a, .scaling-controls a {
     color: #454545;
     text-decoration: underline;
     font-size: 0.875em;
@@ -311,6 +312,14 @@ img {
 
 .text-controls a {
   font-size: 0.75em; }
+
+.workarea-scaling {
+  text-align: center;
+  height: 418px;
+  padding: 209px 0; }
+  .workarea-scaling button {
+    background: initial;
+    border: initial; }
 
 .workarea-magictext {
   margin: 2em auto;
