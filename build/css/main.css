@@ -218,10 +218,11 @@ img {
   border-radius: 5px;
   height: 500px;
   margin: 25px auto 0 auto;
+  overflow: hidden;
   width: 75%;
   position: relative; }
 
-.workarea-basics, .workarea-scaling, .workarea-magicnumbers {
+.workarea-basics, .workarea-scaling, .workarea-magictext {
   position: absolute;
   left: 999px;
   top: 0;
@@ -229,7 +230,7 @@ img {
   -webkit-transition: all 350ms linear;
           transition: all 350ms linear; }
 
-.workarea-basics.show, .workarea-scaling.show, .workarea-magicnumbers.show {
+.workarea-basics.show, .workarea-scaling.show, .workarea-magictext.show {
   position: initial;
   opacity: 1.0; }
 
@@ -293,16 +294,60 @@ img {
       right: 0;
       width: 100%; }
 
-.basic-controls {
+.basic-controls, .text-controls {
   border-radius: 0 0 4px 4px;
   padding: 2em 0;
   background: rgba(0, 0, 0, 0.2);
   position: absolute;
   width: 100%;
-  bottom: 0; }
-  .basic-controls a {
+  bottom: 0;
+  left: 0;
+  text-align: center; }
+  .basic-controls a, .text-controls a {
     color: #454545;
     text-decoration: underline;
     font-size: 0.875em;
     margin-left: 1em; }
 
+.workarea-magictext {
+  margin: 2em auto;
+  width: 90%; }
+  .workarea-magictext h4 {
+    color: #000;
+    -webkit-transition: all .5s linear;
+            transition: all .5s linear;
+    margin: 0 auto; }
+    .workarea-magictext h4.width {
+      width: 80%;
+      margin: 0 auto; }
+    .workarea-magictext h4.linespacing {
+      line-height: 2.2; }
+    .workarea-magictext h4.color {
+      color: #454545; }
+    .workarea-magictext h4.fontsmoothing {
+      -webkit-font-smoothing: antialiased; }
+    .workarea-magictext h4.textrendering {
+      text-rendering: optimizeLegibility; }
+    .workarea-magictext h4.textsize {
+      font-size: 1.5em;
+      font-weight: 900; }
+  .workarea-magictext p {
+    color: #000;
+    font-size: 1em;
+    font-weight: normal;
+    -webkit-transition: all .5s linear;
+            transition: all .5s linear; }
+    .workarea-magictext p.width {
+      width: 80%;
+      margin: 0 auto; }
+    .workarea-magictext p.color {
+      color: rgba(0, 0, 0, 0.8); }
+    .workarea-magictext p.linespacing {
+      line-height: 1.6; }
+    .workarea-magictext p.fontsmoothing {
+      -webkit-font-smoothing: antialiased; }
+    .workarea-magictext p.textrendering {
+      text-rendering: optimizeLegibility; }
+    .workarea-magictext p.textsize {
+      font-size: 1.125em;
+      font-weight: 400; }

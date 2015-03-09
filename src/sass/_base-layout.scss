@@ -96,13 +96,14 @@ img {
   border-radius: 5px;
   height: 500px;
   margin: 25px auto 0 auto;
+  overflow: hidden;
   width: 75%;
   position: relative;
 }
 
 .workarea-basics,
 .workarea-scaling,
-.workarea-magicnumbers {
+.workarea-magictext {
   position: absolute;
   left: 999px;
   top: 0;
@@ -112,7 +113,7 @@ img {
 
 .workarea-basics.show,
 .workarea-scaling.show,
-.workarea-magicnumbers.show {
+.workarea-magictext.show {
   position: initial;
   opacity: 1.0;
 }
@@ -191,13 +192,16 @@ img {
   }
 }
 
-.basic-controls {
+.basic-controls,
+.text-controls {
   border-radius: 0 0 4px 4px;
   padding: 2em 0;
   background: rgba(0,0,0,0.2);
   position: absolute;
   width: 100%;
   bottom: 0; 
+  left: 0;
+  text-align: center;
   a {
     color: #454545;
     text-decoration: underline;
@@ -210,6 +214,58 @@ img {
 
 }
 
-.workarea-magicnumbers {
-
+.workarea-magictext {
+  margin: 2em auto;
+  width: 90%;
+  h4 {
+    color: #000;
+    transition: all .5s linear;
+    margin: 0 auto;
+    &.width {
+      width: 80%;
+      margin: 0 auto;
+    }
+    &.linespacing {
+      line-height: 2.2;
+    }
+    &.color {
+      color: #454545;
+    }
+    &.fontsmoothing {
+      -webkit-font-smoothing: antialiased;
+    }
+    &.textrendering {
+      text-rendering: optimizeLegibility;
+    }
+    &.textsize {
+      font-size: $font-size-24;
+      font-weight: 900;
+    }
+  }
+  p {
+    color: #000;
+    font-size: $font-size-16;
+    font-weight: normal; 
+    transition: all .5s linear;
+    &.width {
+      width: 80%;
+      margin: 0 auto;
+    }
+    &.color {
+      color: rgba(0,0,0,0.8);
+    }
+    &.linespacing {
+      line-height: 1.6;
+    }
+    &.fontsmoothing {
+      -webkit-font-smoothing: antialiased;
+    }
+    &.textrendering {
+      text-rendering: optimizeLegibility;
+    }
+    &.textsize {
+      font-size: $font-size-18;
+      font-weight: 400;
+    }
+  }
 }

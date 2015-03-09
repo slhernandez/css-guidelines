@@ -4,10 +4,12 @@ var demo = {
     console.log('demo is initialized.'); 
     this.setupDemoClickEvents();
     this.bindBasicLayout();
+    this.bindMagicText();
   },
   setupDemoClickEvents: function() {
     var demoNav = document.querySelector('.demo-menu');
     var workarea = document.querySelector('.workarea');
+    demoNav.firstElementChild.classList.add('select');
     demoNav.addEventListener('click', function(e) {
       demo.clearNavSelection(demoNav);
       e.target.classList.add('select');
@@ -19,9 +21,9 @@ var demo = {
       } else if (menuItem === 'Scaling Button') {
         demo.clearWorkArea(workarea);
         workarea.querySelector('.workarea-scaling').classList.add('show');
-      } else if (menuItem === 'Magic Numbers') {
+      } else if (menuItem === 'Magic Text') {
         demo.clearWorkArea(workarea);
-        workarea.querySelector('.workarea-magicnumbers').classList.add('show');
+        workarea.querySelector('.workarea-magictext').classList.add('show');
       }
     }.bind(demo));
   }, 
@@ -36,20 +38,23 @@ var demo = {
     });
   },
   bindBasicLayout: function() {
-    console.log("bindBasicLayout");
     var basicControls = document.querySelector('.basic-controls');
     var workareaBasics = document.querySelector('.workarea-basics');
     basicControls.addEventListener('click', function(e) {
       var control = e.target.textContent;
       demo.removeModifierClass(workareaBasics);
-      if (control === 'Static') {
-        demo.mapClass(workareaBasics, control.toLowerCase());
-      } else if (control === 'Relative') {
-        demo.mapClass(workareaBasics, control.toLowerCase());
-      } else if (control === 'Absolute') {
-        demo.mapClass(workareaBasics, control.toLowerCase());
-      } else if (control === 'Fixed') {
-        demo.mapClass(workareaBasics, control.toLowerCase());
+      demo.mapClass(workareaBasics, control.toLowerCase());
+    }.bind(demo));
+  },
+  bindMagicText: function() {
+    var textControls = document.querySelector('.text-controls');
+    var workareaMagicText = document.querySelector('.workarea-magictext');
+    textControls.addEventListener('click', function(e) {
+      var control = e.target.textContent.toLowerCase();
+      if (control === 'reset') {
+        demo.removeAllModifierClasses(workareaMagicText);
+      } else {
+        demo.mapClass(workareaMagicText, control.toLowerCase());
       }
     }.bind(demo));
   },
@@ -63,6 +68,15 @@ var demo = {
       var itemToRemove = item.classList[1];
       item.classList.remove(itemToRemove);
     });
+  },
+  removeAllModifierClasses: function(obj) {
+    console.log('removeAllModifierClasses');
+    Array.prototype.map.call(obj.children, function(item) {
+      if (item.className.split(' ')[0] !== 'text-controls') {
+        item.className = "";
+      }
+    });
+
   }
 }
 
