@@ -316,10 +316,45 @@ img {
 .workarea-scaling {
   text-align: center;
   height: 418px;
-  padding: 209px 0; }
+  padding: 180px 0; }
   .workarea-scaling button {
     background: initial;
     border: initial; }
+  .workarea-scaling .btn-card {
+    display: inline-block; }
+    .workarea-scaling .btn-card .button-label {
+      font-size: 0.75em;
+      font-weight: 200;
+      color: #005b67;
+      margin: 0 0 1em 0; }
+    .workarea-scaling .btn-card.non-flexible {
+      margin-left: 2.5em; }
+
+.flexible .btn {
+  font-size: 125%;
+  /* Assumming a 16px root font size */
+  line-height: 1.5;
+  /* or 150% */
+  padding: .3em .8em;
+  border: 1px solid #446d88;
+  background: -webkit-linear-gradient(#77a0bb, #58a);
+  background: linear-gradient(#77a0bb, #58a);
+  border-radius: .2em;
+  box-shadow: 0 .05em .25em gray;
+  color: white;
+  text-shadow: 0 -.05em .05em #335166; }
+
+.non-flexible .btn {
+  padding: 6px 16px;
+  border: 1px solid #446d88;
+  background: -webkit-linear-gradient(#77a0bb, #58a);
+  background: linear-gradient(#77a0bb, #58a);
+  border-radius: 4px;
+  box-shadow: 0 1px 5px gray;
+  color: white;
+  text-shadow: 0 -1px 1px #335166;
+  font-size: 20px;
+  line-height: 30px; }
 
 .workarea-magictext {
   margin: 2em auto;

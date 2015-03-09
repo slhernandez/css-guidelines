@@ -60,7 +60,7 @@ var demo = {
   },
   mapClass: function(obj, classname) {
     Array.prototype.map.call(obj.children, function(item) {
-      item.classList.add(classname);
+      item.classList.toggle(classname);
     });
   },
   removeModifierClass: function(obj) {
