@@ -210,6 +210,12 @@ img {
   }
 }
 
+.text-controls {
+  a {
+    font-size: $font-size-12;
+  }
+}
+
 .workarea-scaling {
 
 }
@@ -241,6 +247,12 @@ img {
       font-size: $font-size-24;
       font-weight: 900;
     }
+    &.heading {
+      border-bottom: 1px solid #454545;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+    }
   }
   p {
     color: #000;
@@ -266,6 +278,15 @@ img {
     &.textsize {
       font-size: $font-size-18;
       font-weight: 400;
+    }
+    &.italics {
+      span {
+        font-style: italic;
+        font-weight: 900;
+        font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman'; 
+        margin: 0 .2em;
+        color: #000;
+      }
     }
   }
 }

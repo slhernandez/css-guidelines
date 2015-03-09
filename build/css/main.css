@@ -309,6 +309,9 @@ img {
     font-size: 0.875em;
     margin-left: 1em; }
 
+.text-controls a {
+  font-size: 0.75em; }
+
 .workarea-magictext {
   margin: 2em auto;
   width: 90%; }
@@ -331,6 +334,11 @@ img {
     .workarea-magictext h4.textsize {
       font-size: 1.5em;
       font-weight: 900; }
+    .workarea-magictext h4.heading {
+      border-bottom: 1px solid #454545;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 4px; }
   .workarea-magictext p {
     color: #000;
     font-size: 1em;
@@ -351,3 +359,9 @@ img {
     .workarea-magictext p.textsize {
       font-size: 1.125em;
       font-weight: 400; }
+    .workarea-magictext p.italics span {
+      font-style: italic;
+      font-weight: 900;
+      font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman';
+      margin: 0 .2em;
+      color: #000; }
