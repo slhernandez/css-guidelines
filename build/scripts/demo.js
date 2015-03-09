@@ -98,7 +98,9 @@ var demo = {
   mapClassToButton: function(obj, classname) {
     Array.prototype.map.call(obj.children, function(item) {
       var button = item.querySelector('button');
-      button.classList.add(classname);
+      if (button !== null) {
+        button.classList.toggle(classname);
+      }
     });
   }
 }
