@@ -1,3 +1,14 @@
+$proxima-nova: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+@mixin font-face() {
+  font-family: 'whitney';
+  src: url("../site/fonts/Whitney-Book-Bas.otf");
+}
+
+@mixin whitney-family() {
+  @include font-face();
+}
+
 // Basic colors are set here
 // --------------------------- //
 $body-copy-color: #000;

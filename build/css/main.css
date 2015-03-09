@@ -155,7 +155,7 @@ header {
     font-weight: 200;
     margin: 0 auto;
     text-align: center;
-    width: 980px; }
+    width: 100%; }
 
 img {
   max-width: 100%; }
@@ -376,7 +376,7 @@ img {
     .workarea-magictext h4.textrendering {
       text-rendering: optimizeLegibility; }
     .workarea-magictext h4.textsize {
-      font-size: 1.5em;
+      font-size: 1.25em;
       font-weight: 900; }
     .workarea-magictext h4.heading {
       border-bottom: 1px solid #454545;
@@ -401,8 +401,10 @@ img {
     .workarea-magictext p.textrendering {
       text-rendering: optimizeLegibility; }
     .workarea-magictext p.textsize {
-      font-size: 1.125em;
-      font-weight: 400; }
+      font-size: 1em;
+      font-weight: 400;
+      font-family: 'whitney';
+      src: url("../site/fonts/Whitney-Book-Bas.otf"); }
     .workarea-magictext p.italics span {
       font-style: italic;
       font-weight: 900;

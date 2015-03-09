@@ -292,7 +292,7 @@ img {
       text-rendering: optimizeLegibility;
     }
     &.textsize {
-      font-size: $font-size-24;
+      font-size: $font-size-20;
       font-weight: 900;
     }
     &.heading {
@@ -324,8 +324,9 @@ img {
       text-rendering: optimizeLegibility;
     }
     &.textsize {
-      font-size: $font-size-18;
+      font-size: $font-size-16;
       font-weight: 400;
+      @include whitney-family();
     }
     &.italics {
       span {
