@@ -262,11 +262,8 @@ img {
     background-color: #44accf; }
     .workarea-basics .box-2.relative {
       left: 200px;
-      -webkit-transition: .8s;
-              transition: .8s;
-      -webkit-transform: translateX(100%);
-          -ms-transform: translateX(100%);
-              transform: translateX(100%); }
+      -webkit-transition: all .8s linear;
+              transition: all .8s linear; }
     .workarea-basics .box-2.absolute {
       top: 0;
       right: 0; }

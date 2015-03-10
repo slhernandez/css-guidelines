@@ -154,8 +154,7 @@ img {
     background-color: #44accf;
     &.relative {
       left: 200px;
-      transition: .8s;
-      transform: translateX(100%);
+      transition: all .8s linear;
     }
     &.absolute {
       top: 0;
